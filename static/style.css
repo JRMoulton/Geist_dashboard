@@ -1,0 +1,156 @@
+* {box-sizing: border-box;}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 30px;
+  grid-auto-rows: minmax(1fr, auto); 
+  padding-left: 42px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: auto;
+  background-image: src="/static/img/main_background.jpg";
+}
+
+.display_box {
+  border: 3px solid;
+  border-radius: 16px;
+}
+
+.color_normal {
+  color: #30aa55;
+}
+
+.normal {
+  color: #30aa55;
+  border-color: rgba(48,170,85,.4);
+
+}
+
+.warning {
+  background-color: rgba(236,209,83,.1);
+  border-color: rgba(236,209,83,.6);
+
+}
+
+.critical {
+  background-color: rgba(255,73,73,.12);
+  color: #ff4949;
+  border-color: rgba(255,73,73);
+}
+
+.cold {
+  border: 3px solid rgba(42,177,255,.8);
+  background-color: rgba(42,177,255,.1);
+  border-radius: 16px;
+  color: #2ab1ff;
+}
+
+.temperature {
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  font-family: Helvetica;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 1px;
+  padding-bottom: 0px;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+  line-height: 2px;
+}
+
+.name {
+  width: 100%;
+  height: 34px;
+  font-size: 15px;
+  font-family: Helvetica;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 1px;
+  line-height: 2px;
+  color: rgba(255,255,255,.7);
+  
+}
+
+.sensor {
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  position: relative;
+  float: left;
+  text-align: center;
+  font-family: helvetica;
+  font-size: 10px;
+  color: #30aa55;
+}
+
+.sensor_warning {
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  position: relative;
+  float: left;
+  text-align: center;
+  font-family: helvetica;
+  font-size: 10px;
+}
+
+.sensor_critical {
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  position: relative;
+  float: left;
+  text-align: center;
+  font-family: helvetica;
+  font-size: 10px;
+}
+
+.imagetext {
+  position: absolute;
+    margin: auto;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    padding-top: 14px;
+    padding-left: 4px;
+    font-size: 24px;
+}
+
+.voltagetext {
+  position: absolute;
+    margin: auto;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    padding-top: 19px;
+    padding-left: 0px;
+    font-size: 16px;
+}
+
+.normaltext {
+  color: #fc00fc;
+}
+
+body {
+  background-color: black;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.bg { 
+  /* The image used */
+  background-image: url("/static/img/main_background.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

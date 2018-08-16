@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel ="shortcut icon" href="/static/img/favicon.ico">
+    <link rel="stylesheet" href="/static/style.css">
+
+    {% if title %}
+        <title>Geist Dashboard</title>
+    {% else %}
+      <title>Flask Blog</title>
+    {% endif %}
+</head>
+<body class ="bg">
+    <div class="container">
+    {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,9 +1,9 @@
 * {box-sizing: border-box;}
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 200px);
   grid-gap: 30px;
-  grid-auto-rows: minmax(1fr, auto); 
+  grid-auto-rows: minmax(200px, auto); 
   padding-left: 42px;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -124,7 +124,7 @@
     left:0;
     right:0;
     bottom:0;
-    padding-top: 19px;
+    padding-top: 18px;
     padding-left: 0px;
     font-size: 16px;
 }

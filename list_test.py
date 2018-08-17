@@ -18,18 +18,6 @@ posts = [
     }
 ]
 
-@app.route("/")
-@app.route("/home")
-def home():
-    return render_template('home.html', posts=posts, geist_data="geist_data")
 
-@app.route("/about")
-def about():
-    return render_template('about.html', title='About')
-
-@app.route("/test")
-def test():
-    return render_template('test.html', title="Test", geist_data="geist_data", posts="posts")
-
-if __name__ == '__main__':
-    app.run(debug=True)
+for device in geist_data:
+    print(type(device))

@@ -4,9 +4,110 @@
     <div class="wrapper">
         
         {% for device_dict in geist_data%}
-            <p>hi</p>
-
+           
+                <div class="display_box normal" id= {{device_dict.device.name}} >
+                    <a target="_blank" href= {{ device_dict.device.device_link }}>
+                        <div class ="temp_internal">
+                            <h1>{{device_dict.temp_internal.value}}</h1>
+                        </div>
+                        <div class ="name">
+                            <p>{{device_dict.device.name}}</p>
+                        </div>
+                        {% if device_dict.door.sensor == True %}
+                            <div class = "sensor door">
+                                {% if device_dict.door.state == "Normal"%}
+                                    <img width="54" height="54" src="/static/img/door_normal.png">
+                                {%elif device_dict.power_failure.state == "Warning"%}
+                                    <img width="54" height="54" src="/static/img/door_warning.png">
+                                {%else%}   
+                                    <img width="54" height="54" src="/static/img/door_critical.png">
+                                {%endif%}
+                            </div>
+                        {%endif%}
+                        {% if device_dict.smoke.sensor == True %}
+                            <div class = "sensor smoke">
+                                {% if device_dict.smoke.state == "Normal"%}
+                                    <img width="54" height="54" src="/static/img/smoke_normal.png">
+                                {%elif device_dict.smoke.state == "Warning"%}
+                                    <img width="54" height="54" src="/static/img/smoke_warning.png">
+                                {%else%}   
+                                    <img width="54" height="54" src="/static/img/smoke_critical.png">
+                                {%endif%}
+                            </div>
+                        {%endif%}
+                        {% if device_dict.power_failure.sensor == True %}
+                            <div class = "sensor commercial_power">
+                                {% if device_dict.power_failure.state == "Normal"%}
+                                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
+                                {%elif device_dict.power_failure.state == "Warning"%}
+                                <img width="54" height="54" src="/static/img/commercial_power_warning.png">
+                                {%else%}   
+                                    <img width="54" height="54" src="/static/img/commercial_power_critical.png">
+                                {%endif%}
+                            </div>
+                        {%endif%}
+                        {% if device_dict.flood.sensor == True %}
+                            <div class = "sensor flood">
+                                {% if device_dict.flood.state == "Normal"%}
+                                    <img width="54" height="54" src="/static/img/flood_normal.png">
+                                {%elif device_dict.flood.state == "Warning"%}
+                                    <img width="54" height="54" src="/static/img/flood_warning.png">
+                                {%else%}   
+                                    <img width="54" height="54" src="/static/img/flood_critical.png">
+                                {%endif%}
+                            </div>
+                        {%endif%}
+                        {% if device_dict.remote_temp.sensor == True %}
+                            <div class = "sensor remote_temp">
+                                {% if device_dict.remote_temp.state == "Normal"%}
+                                    <img width="54" height="54" src="/static/img/remote_temp_normal.png">
+                                    <h1 class="imagetext color_normal" id={{device_dict.device.name + "_temp"}} >{{device_dict.remote_temp.value}}</h1>
+                                {%elif device_dict.remote_temp.state == "Warning"%}
+                                    <img width="54" height="54" src="/static/img/remote_temp_warning.png">
+                                    <h1 class="imagetext color_warning" id={{device_dict.device.name + "_temp"}}>{{device_dict.remote_temp.value}}</h1>
+                                {%elif device_dict.remote_temp.state == "Low"%}
+                                    <img width="54" height="54" src="/static/img/remote_temp_low.png">
+                                    <h1 class="imagetext color_low" id={{device_dict.device.name + "_temp"}}>{{device_dict.remote_temp.value}}</h1>
+                                {%else%}   
+                                    <img  width="54" height="54" src="/static/img/remote_temp_critical.png">
+                                    <h1 class="imagetext color_critical" id={{device_dict.device.name + "_temp"}}>{{device_dict.remote_temp.value}}</h1>
+                                {%endif%}
+                            </div>
+                        {%endif%}
+                        {% if device_dict.plant_voltage.sensor == True %}
+                            <div class = "sensor plant_voltage">
+                                <h1 class = "voltagetext">{{device_dict.plant_voltage.value}}</h1>
+                                {% if device_dict.plant_voltage.state == "Normal"%}
+                                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
+                                {%elif device_dict.power_failure.state == "Warning"%}
+                                    <img width="54" height="54" src="/static/img/commercial_power_warning.png">
+                                {%else%}   
+                                    <img width="54" height="54" src="/static/img/plant_voltage_critical.png">
+                                {%endif%}
+                            </div>
+                        {%endif%}
+                        {% if device_dict.generator.sensor == True %}
+                            <div class = "sensor generator">
+                                {% if device_dict.generator.state == "Normal"%}
+                                    <img width="54" height="54" src="/static/img/generator_normal.png">
+                                {%elif device_dict.power_failure.state == "Warning"%}
+                                    <img width="54" height="54" src="/static/img/generator_warning.png">
+                                {%else%}   
+                                    <img width="54" height="54" src="/static/img/generator_critical.png">
+                                {%endif%}
+                            </div>
+                        {%endif%}
+                        {% if device_dict.hydrogen.sensor == True %}
+                            <div class = "sensor hydrogen">
+                                {% if device_dict.hydrogen.state == "Normal"%}
+                                    <img width="54" height="54" src="/static/img/hydrogen_normal.png">
+                                {%else%}   
+                                    <img width="54" height="54" src="/static/img/hydrogen_critical.png">
+                                {%endif%}
+                            </div>
+                        {%endif%}
+                    </a>
+                </div>
         {% endfor %}
     </div>
-    
 {% endblock content %}

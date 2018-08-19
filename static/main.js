@@ -1,6 +1,9 @@
+$(document).ready(run_update)
+
 function run_update() {
-    $.getJSON( "/static/data.json")
+    $.getJSON( "/static/data.json?" + Math.random())
         .done(updateData)
+        
 
         .fail(function(){
             console.log("failed to read data");
@@ -72,7 +75,6 @@ function updateData(data) {
                 id.children(".remote_temp").children().attr("src", "/static/img/remote_temp_critical.png");
                 document.getElementById(data[device].device.name + "_temp").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
                 document.getElementById(data[device].device.name + "_temp").classList.add("color_critical"); 
-                console.log(document.getElementById(data[device].device.name + "_temp").classList)
             }
         };
 
@@ -80,10 +82,16 @@ function updateData(data) {
             id.children(".plant_voltage").children().html(data[device].plant_voltage.value)
             if (data[device].plant_voltage.state == "Normal") {
                 id.children(".plant_voltage").children().attr("src", "/static/img/plant_voltage_normal.png");
+                document.getElementById(data[device].device.name + "_volt").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
+                document.getElementById(data[device].device.name + "_volt").classList.add("color_normal"); 
             } else if (data[device].plant_voltage.state == "Warning") {
                 id.children(".plant_voltage").children().attt("src", "/static/img/plant_voltage_warning.png");
+                document.getElementById(data[device].device.name + "_volt").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
+                document.getElementById(data[device].device.name + "_volt").classList.add("color_warning");
             } else {
                 id.children(".plant_voltage").children().attr("src", "/static/img/plant_voltage_critical.png");
+                document.getElementById(data[device].device.name + "_volt").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
+                document.getElementById(data[device].device.name + "_volt").classList.add("color_critical");
             };
         };
 

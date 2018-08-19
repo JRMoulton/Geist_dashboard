@@ -76,13 +76,15 @@
                         {%endif%}
                         {% if device_dict.plant_voltage.sensor == True %}
                             <div class = "sensor plant_voltage">
-                                <h1 class = "voltagetext">{{device_dict.plant_voltage.value}}</h1>
                                 {% if device_dict.plant_voltage.state == "Normal"%}
                                     <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
+                                    <h1 class = "voltagetext color_normal" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
                                 {%elif device_dict.power_failure.state == "Warning"%}
                                     <img width="54" height="54" src="/static/img/commercial_power_warning.png">
+                                    <h1 class = "voltagetext color_warning" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
                                 {%else%}   
                                     <img width="54" height="54" src="/static/img/plant_voltage_critical.png">
+                                    <h1 class = "voltagetext color_warning" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
                                 {%endif%}
                             </div>
                         {%endif%}

@@ -1,7 +1,6 @@
 # coding=utf8
 import os
 import requests
-import numpy as np
 import json
 from flask import Flask, render_template
 app = Flask(__name__)

@@ -44,6 +44,7 @@ function updateData(data) {
         } else {
             document.getElementById(data[device].device.name + "_temp_in").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
             document.getElementById(data[device].device.name + "_temp_in").classList.add("color_critical");
+
         }
 
 
@@ -96,7 +97,7 @@ function updateData(data) {
             } else if (data[device].remote_temp.state == "Warning") {
                 id.children(".remote_temp").children().attr("src", "/static/img/remote_temp_warning.png");
                 document.getElementById(data[device].device.name + "_temp").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
-                document.getElementById(data[device].device.name + "_temp").classList.add("color_warning"); 
+                document.getElementById(data[device].device.name + "_temp").classList.add("color_warning");
             } else if (data[device].remote_temp.state == "Low") {
                 id.children(".remote_temp").children().attr("src", "/static/img/remote_temp_low.png");
                 document.getElementById(data[device].device.name + "_temp").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
@@ -115,7 +116,7 @@ function updateData(data) {
                 document.getElementById(data[device].device.name + "_volt").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
                 document.getElementById(data[device].device.name + "_volt").classList.add("color_normal"); 
             } else if (data[device].plant_voltage.state == "Warning") {
-                id.children(".plant_voltage").children().attt("src", "/static/img/plant_voltage_warning.png");
+                id.children(".plant_voltage").children().attr("src", "/static/img/plant_voltage_warning.png");
                 document.getElementById(data[device].device.name + "_volt").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
                 document.getElementById(data[device].device.name + "_volt").classList.add("color_warning");
             } else {

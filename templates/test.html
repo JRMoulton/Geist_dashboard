@@ -4,7 +4,6 @@
     <div class="wrapper">
         
         {% for device_dict in geist_data%}
-               <!-- There needs to be an if statement here to check the box state  -->
                 <div class="display_box normal" id= {{device_dict.device.name}} >
                     <a target="_blank" href= {{ device_dict.device.device_link }}>
                         <div class ="temp_internal">

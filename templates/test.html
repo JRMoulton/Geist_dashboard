@@ -4,15 +4,29 @@
     <div class="wrapper">
         
         {% for device_dict in geist_data%}
-           
+               <!-- There needs to be an if statement here to check the box state  -->
                 <div class="display_box normal" id= {{device_dict.device.name}} >
                     <a target="_blank" href= {{ device_dict.device.device_link }}>
-                        <div class ="temp_internal">
-                            <h1>{{device_dict.temp_internal.value}}</h1>
-                        </div>
+
+                        {% if device_dict.temp_internal.state == "Normal" %}
+                            <div class ="temp_internal">
+                                <!-- !!!!! currently working here. Adding id  -->
+                                <h1 class="color_normal" id={{device_dict.device.name + "_temp_internal"}}>{{device_dict.temp_internal.value}}</h1>
+                            </div>
+                        {% elif device_dict.temp_internal.state == "Warning" %}
+                            <div class ="temp_internal">
+                                <h1 class="color_warning" id={{device_dict.device.name + "_temp_internal"}}>{{device_dict.temp_internal.value}}</h1>
+                            </div>
+                        {% else %}
+                            <div class ="temp_internal">
+                                <h1 class="color_critical" id={{device_dict.device.name + "_temp_internal"}}>{{device_dict.temp_internal.value}}</h1>
+                            </div>
+                        {% endif %}
+
                         <div class ="name">
                             <p>{{device_dict.device.name}}</p>
                         </div>
+
                         {% if device_dict.door.sensor == True %}
                             <div class = "sensor door">
                                 {% if device_dict.door.state == "Normal"%}

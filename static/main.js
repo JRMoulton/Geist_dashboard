@@ -1,5 +1,5 @@
 $(document).ready(run_update)
-setInterval(run_update, 5*1000)
+setInterval(run_update, 60*1000)
 
 function run_update() {
     $.getJSON( "/static/data.json?" + Math.random())
@@ -37,7 +37,6 @@ function updateData(data) {
         } else if (data[device].temp_internal.state == "Warning"){
             document.getElementById(data[device].device.name + "_temp_in").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
             document.getElementById(data[device].device.name + "_temp_in").classList.add("color_warning");
-            console.log(data[device].device.name)
         } else if (data[device].device.temp_internal.state == "Low"){
             document.getElementById(data[device].device.name + "_temp_in").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
             document.getElementById(data[device].device.name + "_temp_in").classList.add("color_low");

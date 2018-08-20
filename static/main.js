@@ -1,4 +1,5 @@
 $(document).ready(run_update)
+setInterval(run_update, 5*1000)
 
 function run_update() {
     $.getJSON( "/static/data.json?" + Math.random())
@@ -15,17 +16,35 @@ function updateData(data) {
     for (device in data) {
         id = $("#" + data[device].device.name).children();  //Selector for the sensor values
 
+        if (data[device].device.geist_criticality == "Normal"){
+            document.getElementById(data[device].device.name).classList.remove("warning", "low", "critical", "normal");
+            document.getElementById(data[device].device.name).classList.add("normal");
+        } else if (data[device].device.geist_criticality == "Warning"){
+            document.getElementById(data[device].device.name).classList.remove("warning", "low", "critical", "normal");
+            document.getElementById(data[device].device.name).classList.add("warning");
+        } else if (data[device].device.geist_criticality == "Low"){
+            document.getElementById(data[device].device.name).classList.remove("warning", "low", "critical", "normal");
+            document.getElementById(data[device].device.name).classList.add("low");
+        } else {
+            document.getElementById(data[device].device.name).classList.remove("warning", "low", "critical", "normal");
+            document.getElementById(data[device].device.name).classList.add("critical");
+        }
 
         id.children(".temp_internal").children().html(data[device].temp_internal.value); //temp_internal update
-        if (data[device].temp_internal.state == "Normal") {
-            document.getElementById(data[device].device.name + "_temp_internal").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
-            document.getElementById(data[device].device.name + "_temp_internal").classList.add("color_normal"); 
-        } else if (data[device].temp_internal.state == "Warning") { 
-            document.getElementById(data[device].device.name + "_temp_internal").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
-            document.getElementById(data[device].device.name + "_temp_internal").classList.add("color_warning"); 
+        if (data[device].temp_internal.state == "Normal"){
+            document.getElementById(data[device].device.name + "_temp_in").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
+            document.getElementById(data[device].device.name + "_temp_in").classList.add("color_normal");
+        } else if (data[device].temp_internal.state == "Warning"){
+            document.getElementById(data[device].device.name + "_temp_in").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
+            document.getElementById(data[device].device.name + "_temp_in").classList.add("color_warning");
+            console.log(data[device].device.name)
+        } else if (data[device].device.temp_internal.state == "Low"){
+            document.getElementById(data[device].device.name + "_temp_in").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
+            document.getElementById(data[device].device.name + "_temp_in").classList.add("color_low");
         } else {
-            document.getElementById(data[device].device.name + "_temp_internal").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
-            document.getElementById(data[device].device.name + "_temp_internal").classList.add("color_critical"); 
+            document.getElementById(data[device].device.name + "_temp_in").classList.remove("color_warning", "color_low", "color_critical", "color_normal");
+            document.getElementById(data[device].device.name + "_temp_in").classList.add("color_critical");
+
         }
 
 
@@ -129,4 +148,3 @@ function updateData(data) {
     };
 };
 
-setInterval(run_update, 5*1000)

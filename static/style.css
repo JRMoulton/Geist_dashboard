@@ -25,6 +25,9 @@
 .color_low {
   color: #2ab1ff; 
 }
+.color_warning {
+  color: rgb(236,209,83);
+}
 
 .normal {
   color: #30aa55;

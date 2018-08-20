@@ -27,9 +27,11 @@
 .color_critical {
   color: #ff4949;
 }
+
 .color_low {
   color: #2ab1ff; 
 }
+
 .color_warning {
   color: rgb(236,209,83);
 }
@@ -42,7 +44,7 @@
 .warning {
   background-color: rgba(236,209,83,.1);
   border-color: rgba(236,209,83,.6);
-
+  color: rgb(236,209,83);
 }
 
 .critical {
@@ -81,7 +83,6 @@
   padding-top: 1px;
   line-height: 2px;
   color: rgba(255,255,255,.7);
-  
 }
 
 .sensor {
@@ -137,7 +138,7 @@
     left:0;
     right:0;
     bottom:0;
-    padding-top: 18px;
+    padding-top: 19px;
     padding-left: 0px;
     font-size: 16px;
 }
@@ -171,4 +172,45 @@ html {
 a {
   text-decoration: inherit;
   color: #30aa55;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 7px 4px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%; 
+  margin-left: -80px;
+  border: 3px solid rgba(255,255,255,.4);
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }

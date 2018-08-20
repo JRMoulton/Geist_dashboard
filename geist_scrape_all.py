@@ -22,6 +22,7 @@ def assignSensor(sensor_mode, sensor_value, sensor_label):
 
     global door
     global door_state
+    global door_state_label
     global door_label
     global door_sensor
 
@@ -113,18 +114,25 @@ def assignSensor(sensor_mode, sensor_value, sensor_label):
             plant_voltage_state = "Alarm"
         else:
             plant_voltage_state = "Normal"
-    elif "customVoltage" in sensor_mode:
+    elif "customVoltage" in sensor_mode: 
         if "Hydrogen" in sensor_label:
+            old_max = 100.0
+            old_min = 0.0
+            new_max = 4.0
+            new_min = 0.25
+            old_value = float(sensor_value)
+            old_range = (old_max - old_min)  
+            new_range = (new_max - new_min)  
+            new_value = (((old_value - old_min) * new_range) / old_range) + new_min
             hydrogen_sensor = True
             hydrogen_label = sensor_label
-            hydrogen = sensor_value
+            hydrogen = round(new_value,1)
     
             ########################
             # Determine alarm status
-            hydrogen_float = (float(hydrogen))
-            if 50 <= hydrogen_float < 80:
+            if 2 <= hydrogen < 3:
                 hydrogen_state = "Warning"
-            elif hydrogen_float >= 80:
+            elif hydrogen >= 3:
                 hydrogen_state = "Alarm"
             else:
                 hydrogen_state = "Normal"
@@ -286,17 +294,17 @@ for device in geist_list:
                         remote_temp_sensor = True
 
                         remote_temp_value = str(round(float(inner_dict2["entity"]["0"]["measurement"]["0"]["value"])))
-                        remote_temp_label = inner_dict2["entity"]["0"]["measurement"]["0"]["type"]
+                        remote_temp_label = inner_dict2["label"]
                         remote_temp_unit = inner_dict2["entity"]["0"]["measurement"]["0"]["units"]
 
                         remote_temp = remote_temp_value + "°"
                         remote_temp_float = float(remote_temp_value)
 
-                        if 73 <= remote_temp_float < 80:
+                        if 77 <= remote_temp_float < 80:
                                 remote_temp_state = "Warning"
                         elif remote_temp_float >= 80:
                             remote_temp_state = "Alarm"
-                        elif remote_temp_float < 50:
+                        elif remote_temp_float < 45:
                             remote_temp_state = "Low"
                         else:
                             remote_temp_state = "Normal"  

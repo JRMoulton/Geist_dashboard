@@ -27,116 +27,120 @@
                         <div class ="name">
                             <p>{{device_dict.device.name}}</p>
                         </div>
-                    
-                        {% if device_dict.door.sensor == True -%}
-                            <div class = "sensor door tooltip">
-                                {% if device_dict.door.state == "Normal" -%}
-                                    <img width="80%" height="auto%" src="/static/img/door_normal.png">
-                                    <span class = "tooltiptext">{{ device_dict.door.label }} is Closed</span>
-                                {% else -%}   
-                                    <img width="80%" height="auto%" src="/static/img/door_critical.png">
-                                    <span class = "tooltiptext">{{ device_dict.door.label }} is Open</span>
-                                {% endif -%}
-                            </div>
+          </div>
                         {% endif -%}
-                        {% if device_dict.smoke.sensor == True -%}
-                            <div class = "sensor smoke tooltip">
-                                {% if device_dict.smoke.state == "Normal" -%}
-                                    <img width="80%" height="auto%" src="/static/img/smoke_normal.png">
-                                    <span class = "tooltiptext">{{ device_dict.smoke.label }} State is Normal</span>
-                                {% else -%}   
-                                    <img width="80%" height="auto%" src="/static/img/smoke_critical.png">
-                                    <span class = "tooltiptext">{{ device_dict.smoke.label }} is in Alarm!</span>
-                                {% endif -%}
-                            </div>
-                        {% endif -%}
-                        {% if device_dict.power_failure.sensor == True -%}
-                            <div class = "sensor commercial_power tooltip">
-                                {% if device_dict.power_failure.state == "Normal" -%}
-                                    <img width="80%" height="auto%" src="/static/img/commercial_power_normal.png">
-                                    <span class = "tooltiptext">{{ device_dict.power_failure.label }} is Normal</span>
-                                {% else -%}   
-                                    <img width="80%" height="auto%" src="/static/img/commercial_power_critical.png">
-                                    <span class = "tooltiptext">{{ device_dict.power_failure.label }} Failure!</span>
-                                {% endif -%}
-                            </div>
-                        {% endif -%}
-                        {% if device_dict.flood.sensor == True -%}
-                            <div class = "sensor flood tooltip">
-                                {% if device_dict.flood.state == "Normal" -%}
-                                    <img width="80%" height="auto%" src="/static/img/flood_normal.png">
-                                    <span class = "tooltiptext">{{ device_dict.flood.label }} is Dry</span>
-                                {% else -%}   
-                                    <img width="80%" height="auto%" src="/static/img/flood_critical.png">
-                                {% endif -%}
-                            </div>
-                        {% endif -%}
-                        {% if device_dict.remote_temp.sensor == True -%}
-                            <div class = "sensor remote_temp tooltip">
-                                {% if device_dict.remote_temp.state == "Normal" -%}
-                                    <img width="80%" height="auto%" src="/static/img/remote_temp_normal.png">
-                                    <h1 class="imagetext color_normal" id={{device_dict.device.name + "_temp"}}>{{device_dict.remote_temp.value}}</h1>
-                                    <span class = "tooltiptext">{{ device_dict.remote_temp.label }}</span>
-                                {% elif device_dict.remote_temp.state == "Warning" -%}
-                                    <img width="80%" height="auto%" src="/static/img/remote_temp_warning.png">
-                                    <h1 class="imagetext color_warning" id={{device_dict.device.name + "_temp"}}>{{device_dict.remote_temp.value}}</h1>
-                                    <span class = "tooltiptext">{{ device_dict.remote_temp.label }}</span>
-                                {% elif device_dict.remote_temp.state == "Low" -%}
-                                    <img width="80%" height="auto%" src="/static/img/remote_temp_low.png">
-                                    <h1 class="imagetext color_low" id={{device_dict.device.name + "_temp"}}>{{device_dict.remote_temp.value}}</h1>
-                                    <span class = "tooltiptext">{{ device_dict.remote_temp.label }}</span>
-                                {% else -%}   
-                                    <img width="80%" height="auto%" src="/static/img/remote_temp_critical.png">
-                                    <h1 class="imagetext color_critical" id={{device_dict.device.name + "_temp"}}>{{device_dict.remote_temp.value}}</h1>
-                                    <span class = "tooltiptext">{{ device_dict.remote_temp.label }}</span>
-                                {% endif -%}
-                            </div>
-                        {% endif -%}
-                        {% if device_dict.plant_voltage.sensor == True -%}
-                            <div class = "sensor plant_voltage tooltip">
-                                {% if device_dict.plant_voltage.state == "Normal" -%}
-                                    <img width="80%" height="auto%" src="/static/img/plant_voltage_normal.png">
-                                    <h1 class = "voltagetext color_normal" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
-                                    <span class = "tooltiptext">{{ device_dict.plant_voltage.label }} is normal at {{ device_dict.plant_voltage.value }}V</span>
-                                {% elif device_dict.power_failure.state == "Warning" -%}
-                                    <img width="80%" height="auto%" src="/static/img/commercial_power_warning.png">
-                                    <h1 class = "voltagetext color_warning" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
-                                    <span class = "tooltiptext">{{ device_dict.plant_voltage.label }} is getting low at {{ device_dict.plant_voltage.value }}V</span>
-                                {% else -%}   
-                                    <img width="80%" height="auto%" src="/static/img/plant_voltage_critical.png">
-                                    <h1 class = "voltagetext color_warning" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
-                                    <span class = "tooltiptext">{{ device_dict.plant_voltage.label }} is critically low at {{ device_dict.plant_voltage.value }}V</span>
-                                {% endif -%}
-                            </div>
-                        {%endif -%}
-                        {% if device_dict.generator.sensor == True -%}
-                            <div class = "sensor generator tooltip">
-                                {% if device_dict.generator.state == "Normal" -%}
-                                    <img width="80%" height="auto%" src="/static/img/generator_normal.png">
-                                    <span class = "tooltiptext">Generator State is Normal</span>
-                                {% elif device_dict.power_failure.state == "Warning" -%}
-                                    <img width="80%" height="auto%" src="/static/img/generator_warning.png">
-                                    <span class = "tooltiptext">Generator is Exercising</span>
-                                {% else -%}   
-                                    <img width="80%" height="auto%" src="/static/img/generator_critical.png">
-                                    <span class = "tooltiptext">Generator is running with a load of {{ device_dict.generator.value }} Amps</span>
-                                {% endif -%}
-                            </div>
-                        {% endif -%}
-                        {% if device_dict.hydrogen.sensor == True -%}
-                            <div class = "sensor hydrogen tooltip">
-                                {% if device_dict.hydrogen.state == "Normal"-%}
-                                    <img width="80%" height="auto%" src="/static/img/hydrogen_normal.png">
-                                    <span class = "tooltiptext">Hydrogen level is normal at {{ device_dict.hydrogen.value }}% LEL</span>
-                                {% elif device_dict.hydrogen.state == "Warning"-%}
-                                    <img width="80%" height="auto%" src="/static/img/hydrogen_warning.png">
-                                    <span class = "tooltiptext">Hydrogen level is a bit high at {{ device_dict.hydrogen.value }}% LEL</span>
-                                {% else -%}   
-                                    <img width="80%" height="auto%" src="/static/img/hydrogen_critical.png">
-                                    <span class = "tooltiptext">Hydrogen level is critically high at {{ device_dict.hydrogen.value }}% LEL</span>
-                                {% endif -%}
-                            </div>
-                        {% endif -%}
+
+                        <div class="sensor_div">
+                            {% if device_dict.door.sensor == True -%}
+                                <div class = "sensor door tooltip">
+                                    {% if device_dict.door.state == "Normal" -%}
+                                        <img width="54" height="54" src="/static/img/door_normal.png">
+                                        <span class = "tooltiptext">{{ device_dict.door.label }} is Closed</span>
+                                    {% else -%}   
+                                        <img width="54" height="54" src="/static/img/door_critical.png">
+                                        <span class = "tooltiptext">{{ device_dict.door.label }} is Open</span>
+                                    {% endif -%}
+                                </div>
+                            {% endif -%}
+                            {% if device_dict.smoke.sensor == True -%}
+                                <div class = "sensor smoke tooltip">
+                                    {% if device_dict.smoke.state == "Normal" -%}
+                                        <img width="54" height="54" src="/static/img/smoke_normal.png">
+                                        <span class = "tooltiptext">{{ device_dict.smoke.label }} State is Normal</span>
+                                    {% else -%}   
+                                        <img width="54" height="54" src="/static/img/smoke_critical.png">
+                                        <span class = "tooltiptext">{{ device_dict.smoke.label }} is in Alarm!</span>
+                                    {% endif -%}
+                                </div>
+                            {% endif -%}
+                            {% if device_dict.power_failure.sensor == True -%}
+                                <div class = "sensor commercial_power tooltip">
+                                    {% if device_dict.power_failure.state == "Normal" -%}
+                                        <img width="54" height="54" src="/static/img/commercial_power_normal.png">
+                                        <span class = "tooltiptext">{{ device_dict.power_failure.label }} is Normal</span>
+                                    {% else -%}   
+                                        <img width="54" height="54" src="/static/img/commercial_power_critical.png">
+                                        <span class = "tooltiptext">{{ device_dict.power_failure.label }} Failure!</span>
+                                    {% endif -%}
+                                </div>
+                            {% endif -%}
+                            {% if device_dict.flood.sensor == True -%}
+                                <div class = "sensor flood tooltip">
+                                    {% if device_dict.flood.state == "Normal" -%}
+                                        <img width="54" height="54" src="/static/img/flood_normal.png">
+                                        <span class = "tooltiptext">{{ device_dict.flood.label }} is Dry</span>
+                                    {% else -%}   
+                                        <img width="54" height="54" src="/static/img/flood_critical.png">
+                                    {% endif -%}
+                                </div>
+                            {% endif -%}
+                            {% if device_dict.remote_temp.sensor == True -%}
+                                <div class = "sensor remote_temp tooltip">
+                                    {% if device_dict.remote_temp.state == "Normal" -%}
+                                        <img width="54" height="54" src="/static/img/remote_temp_normal.png">
+                                        <h1 class="imagetext color_normal" id={{device_dict.device.name + "_temp"}}>{{device_dict.remote_temp.value}}</h1>
+                                        <span class = "tooltiptext">{{ device_dict.remote_temp.label }}</span>
+                                    {% elif device_dict.remote_temp.state == "Warning" -%}
+                                        <img width="54" height="54" src="/static/img/remote_temp_warning.png">
+                                        <h1 class="imagetext color_warning" id={{device_dict.device.name + "_temp"}}>{{device_dict.remote_temp.value}}</h1>
+                                        <span class = "tooltiptext">{{ device_dict.remote_temp.label }}</span>
+                                    {% elif device_dict.remote_temp.state == "Low" -%}
+                                        <img width="54" height="54" src="/static/img/remote_temp_low.png">
+                                        <h1 class="imagetext color_low" id={{device_dict.device.name + "_temp"}}>{{device_dict.remote_temp.value}}</h1>
+                                        <span class = "tooltiptext">{{ device_dict.remote_temp.label }}</span>
+                                    {% else -%}   
+                                        <img  width="54" height="54" src="/static/img/remote_temp_critical.png">
+                                        <h1 class="imagetext color_critical" id={{device_dict.device.name + "_temp"}}>{{device_dict.remote_temp.value}}</h1>
+                                        <span class = "tooltiptext">{{ device_dict.remote_temp.label }}</span>
+                                    {% endif -%}
+                                </div>
+                            {% endif -%}
+                            {% if device_dict.plant_voltage.sensor == True -%}
+                                <div class = "sensor plant_voltage tooltip">
+                                    {% if device_dict.plant_voltage.state == "Normal" -%}
+                                        <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
+                                        <h1 class = "voltagetext color_normal" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
+                                        <span class = "tooltiptext">{{ device_dict.plant_voltage.label }} is normal at {{ device_dict.plant_voltage.value }}V</span>
+                                    {% elif device_dict.power_failure.state == "Warning" -%}
+                                        <img width="54" height="54" src="/static/img/commercial_power_warning.png">
+                                        <h1 class = "voltagetext color_warning" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
+                                        <span class = "tooltiptext">{{ device_dict.plant_voltage.label }} is getting low at {{ device_dict.plant_voltage.value }}V</span>
+                                    {% else -%}   
+                                        <img width="54" height="54" src="/static/img/plant_voltage_critical.png">
+                                        <h1 class = "voltagetext color_warning" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
+                                        <span class = "tooltiptext">{{ device_dict.plant_voltage.label }} is critically low at {{ device_dict.plant_voltage.value }}V</span>
+                                    {% endif -%}
+                                </div>
+                            {%endif -%}
+                            {% if device_dict.generator.sensor == True -%}
+                                <div class = "sensor generator tooltip">
+                                    {% if device_dict.generator.state == "Normal" -%}
+                                        <img width="54" height="54" src="/static/img/generator_normal.png">
+                                        <span class = "tooltiptext">Generator State is Normal</span>
+                                    {% elif device_dict.power_failure.state == "Warning" -%}
+                                        <img width="54" height="54" src="/static/img/generator_warning.png">
+                                        <span class = "tooltiptext">Generator is Exercising</span>
+                                    {% else -%}   
+                                        <img width="54" height="54" src="/static/img/generator_critical.png">
+                                        <span class = "tooltiptext">Generator is running with a load of {{ device_dict.generator.value }} Amps</span>
+                                    {% endif -%}
+                                </div>
+                            {% endif -%}
+                            {% if device_dict.hydrogen.sensor == True -%}
+                                <div class = "sensor hydrogen tooltip">
+                                    {% if device_dict.hydrogen.state == "Normal"-%}
+                                        <img width="54" height="54" src="/static/img/hydrogen_normal.png">
+                                        <span class = "tooltiptext">Hydrogen level is normal at {{ device_dict.hydrogen.value }}% LEL</span>
+                                    {% elif device_dict.hydrogen.state == "Warning"-%}
+                                        <img width="54" height="54" src="/static/img/hydrogen_warning.png">
+                                        <span class = "tooltiptext">Hydrogen level is a bit high at {{ device_dict.hydrogen.value }}% LEL</span>
+                                    {% else -%}   
+                                        <img width="54" height="54" src="/static/img/hydrogen_critical.png">
+                                        <span class = "tooltiptext">Hydrogen level is critically high at {{ device_dict.hydrogen.value }}% LEL</span>
+                                    {% endif -%}
+                                </div>
+                            {% endif -%}
+                        </div>
                     </a>
                 </div>
         {% endfor -%}

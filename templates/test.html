@@ -25,8 +25,10 @@
                             {% endif -%}
                         </div>
                         <div class ="name">
-                            <p class="name_p">{{device_dict.device.name}}</p>
+                            <p>{{device_dict.device.name}}</p>
                         </div>
+          </div>
+                        {% endif -%}
 
                         <div class="sensor_div">
                             {% if device_dict.door.sensor == True -%}

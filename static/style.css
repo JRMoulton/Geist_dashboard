@@ -15,7 +15,6 @@
 .display_box {
   border: 3px solid;
   border-radius: 16px;
-  overflow: hidden;
 }
 
 .sensor_div {
@@ -181,50 +180,12 @@ a {
   text-decoration: inherit;
   color: #30aa55;
 }
+.sensor_div {
+  display: grid;
+  align-items: center;
+}
 
-<<<<<<< HEAD
 
-@media (max-width: 2600px) {
-  .wrapper {
-    grid-template-columns: repeat(10, 1fr);
-  }
-  .temp_internal {
-    font-size: 1.1vw;
-  }
-}
-@media (max-width: 2400px) {
-  .wrapper {
-    grid-template-columns: repeat(9, 1fr);
-  }
-  .temp_internal {
-    font-size: 1.1vw;
-  }
-}
-@media (max-width: 2200px) {
-  .wrapper {
-    grid-template-columns: repeat(8, 1fr);
-  }
-  .temp_internal {
-    font-size: 1.1vw;
-  }
-}
-@media (max-width: 2000px) {
-  .wrapper {
-    grid-template-columns: repeat(8, 1fr);
-  }
-  .temp_internal {
-    font-size: 1.1vw;
-  }
-}
-@media (max-width: 1800px) {
-  .wrapper {
-    grid-template-columns: repeat(7, 1fr);
-  }
-  .temp_internal {
-    font-size: 1.1vw;
-  }
-}
-=======
 .tooltip {
   position: relative;
   display: inline-block;
@@ -265,8 +226,32 @@ span {
   border-style: solid;
   border-color: black transparent transparent transparent;
 }  
-  
->>>>>>> 15c53bbc22a8db0000b25da1657141218bb8ac5a
+
+@media (max-width: 2600px) {
+  .wrapper {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .temp_internal {
+    font-size: 1.1vw;
+  }
+}
+@media (max-width: 2400px) {
+  .wrapper {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .temp_internal {
+    font-size: 1.1vw;
+  }
+}
+@media (max-width: 2200px) {
+  .wrapper {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .temp_internal {
+    font-size: 1.1vw;
+  }
+}
+
 @media (max-width: 1800px) {
   .wrapper {
     grid-template-columns: repeat(7, 1fr);

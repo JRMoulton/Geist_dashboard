@@ -251,14 +251,7 @@ span {
     font-size: 1.1vw;
   }
 }
-@media (max-width: 2000px) {
-  .wrapper {
-    grid-template-columns: repeat(8, 1fr);
-  }
-  .temp_internal {
-    font-size: 1.1vw;
-  }
-}
+
 @media (max-width: 1800px) {
   .wrapper {
     grid-template-columns: repeat(7, 1fr);

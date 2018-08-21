@@ -4,10 +4,10 @@
   grid-template-columns: repeat(8, 1fr);
   grid-gap: 1.3vw;
   grid-auto-rows: 1fr;
-  padding-left: 3em;
+  padding-left: 2em;
   padding-top: 3em;
   padding-bottom: 3em;
-  padding-right: 3em;
+  padding-right: 2em;
   margin: auto;
   background-image: src="/static/img/main_background.jpg";
 }
@@ -15,13 +15,6 @@
 .display_box {
   border: 3px solid;
   border-radius: 16px;
-  overflow: hidden;
-}
-
-.sensor_div {
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(3, 1fr);
 }
 
 .color_normal {
@@ -84,7 +77,7 @@
 .name {
   width: 100%;
   height: auto;
-  font-size: 15px;
+  font-size: 2vw;
   font-family: Helvetica;
   font-weight: bold;
   text-align: center;
@@ -93,36 +86,15 @@
 }
 
 .sensor {
-  width: 64px;
-  height: 64px;
+  width: 33%;
   margin: auto;
   position: relative;
   text-align: center;
   font-family: helvetica;
   font-size: 10px;
   color: #30aa55;
-}
-
-.sensor_warning {
-  width: 64px;
-  height: 64px;
-  margin: auto;
-  position: relative;
   float: left;
-  text-align: center;
-  font-family: helvetica;
-  font-size: 10px;
-}
-
-.sensor_critical {
-  width: 64px;
-  height: 64px;
-  margin: auto;
-  position: relative;
-  float: left;
-  text-align: center;
-  font-family: helvetica;
-  font-size: 10px;
+  padding-bottom: 10px;
 }
 
 .imagetext {
@@ -147,6 +119,7 @@
     padding-top: 19px;
     padding-left: 0px;
     font-size: 16px;
+    line-height: 40px;
 }
 
 .normaltext {
@@ -223,68 +196,350 @@ span {
   border-color: black transparent transparent transparent;
 }  
   
-@media (max-width: 1800px) {
+@media (max-width: 12800px) {
   .wrapper {
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: .5em;
+    margin: 0;
   }
-  .temp_internal {
-    font-size: 1.1vw;
-  }
-}
-@media (max-width: 1600px) {
-  .wrapper {
-    grid-template-columns: repeat(6, 1fr);
-  }
-  .temp_internal {
-    font-size: 1.1vw;
-  }
-}
 
-@media (max-width: 1400px) {
-  .wrapper {
-    grid-template-columns: repeat(5, 1fr);
-  }
   .temp_internal {
-    font-size: 1.2vw;
+    font-size: .9vw;
+    padding-top: 2px;
+  }
+
+  .name {
+    margin: auto;
+    font-size: .9vw;
+    line-height: 2px;
+  }
+
+  .sensor {
+    padding: 3% 0;
+  }
+
+  .voltagetext {
+    font-size: 1vw;
+  }
+
+  .imagetext {
+    font-size: 1.3vw;
+  }
+
+  .display_box {
+    border: 2px solid;
+    margin: 0%;
+  }
+
+  .normal {
+    color: #30aa55;
+    border-color: rgba(48,170,85,.4);
+  }
+
+  .warning {
+    background-color: rgba(236,209,83,.1);
+    border-color: rgba(236,209,83,.6);
+    color: rgb(236,209,83);
   }
 }
 
 @media (max-width: 1200px) {
   .wrapper {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: .5em;
+    margin: 0;
   }
+
   .temp_internal {
+    font-size: 1vw;
+    padding-top: 2px;
+  }
+
+  .name {
+    margin: auto;
+    font-size: 1vw;
+    line-height: 2px;
+  }
+
+  .sensor {
+    padding: 3% 0;
+  }
+
+  .voltagetext {
+    font-size: 1.1vw;
+  }
+
+  .imagetext {
+    font-size: 1.5vw;
+  }
+
+  .display_box {
+    border: 2px solid;
+    margin: 0%;
+  }
+
+  .normal {
+    color: #30aa55;
+    border-color: rgba(48,170,85,.4);
+  }
+
+  .warning {
+    background-color: rgba(236,209,83,.1);
+    border-color: rgba(236,209,83,.6);
+    color: rgb(236,209,83);
+  }
+}
+
+@media (max-width: 1125px) {
+  .wrapper {
+    grid-template-columns: repeat(6, 1fr);
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: .5em;
+    margin: 0;
+  }
+
+  .temp_internal {
+    font-size: 1.2vw;
+    padding-top: 2px;
+  }
+
+  .name {
+    margin: auto;
+    font-size: 1.2vw;
+    line-height: 2px;
+  }
+
+  .sensor {
+    padding: 3% 0;
+  }
+
+  .voltagetext {
     font-size: 1.3vw;
+  }
+
+  .imagetext {
+    font-size: 1.7vw;
+  }
+
+  .display_box {
+    border: 2px solid;
+    margin: 1%;
+  }
+
+  .normal {
+    color: #30aa55;
+    border-color: rgba(48,170,85,.4);
+  }
+
+  .warning {
+    background-color: rgba(236,209,83,.1);
+    border-color: rgba(236,209,83,.6);
+    color: rgb(236,209,83);
   }
 }
 
 @media (max-width: 1000px) {
   .wrapper {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: .5em;
+    margin: 0;
   }
+
   .temp_internal {
-    font-size: 1.6vw;
+    font-size: 1.4vw;
+    padding-top: 2px;
   }
-}
+
+  .name {
+    margin: auto;
+    font-size: 1.4vw;
+    line-height: 2px;
+  }
+
+  .sensor {
+    padding: 3% 0;
+  }
+
+  .voltagetext {
+    font-size: 1.5vw;
+  }
+
+  .imagetext {
+    font-size: 2vw;
+  }
+
+  .display_box {
+    border: 2px solid;
+    margin: 1%;
+  }
+
+  .normal {
+    color: #30aa55;
+    border-color: rgba(48,170,85,.4);
+  }
+
+  .warning {
+    background-color: rgba(236,209,83,.1);
+    border-color: rgba(236,209,83,.6);
+    color: rgb(236,209,83);
+  }
 
 @media (max-width: 800px) {
   .wrapper {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: .5em;
+    margin: 0;
   }
+
   .temp_internal {
-    font-size: 2.1vw;
+    font-size: 1.8vw;
+    padding-top: 4px;
+  }
+
+  .name {
+    margin: auto;
+    font-size: 1.7vw;
+    line-height: 2px;
+  }
+
+  .sensor {
+    padding: 3% 0;
+  }
+
+  .voltagetext {
+    font-size: 2vw;
+  }
+
+  .imagetext {
+    font-size: 2.5vw;
+  }
+
+  .display_box {
+    border: 2px solid;
+    margin: 1%;
+  }
+
+  .normal {
+    color: #30aa55;
+    border-color: rgba(48,170,85,.4);
+  }
+
+  .warning {
+    background-color: rgba(236,209,83,.1);
+    border-color: rgba(236,209,83,.6);
+    color: rgb(236,209,83);
+  }
+
+@media (max-width: 650px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: .5em;
+    margin: 0;
+  }
+
+  .temp_internal {
+    font-size: 2.3vw;
+  }
+
+  .name {
+    margin: auto;
+    font-size: 2.2vw;
+    line-height: 2px;
+  }
+
+  .sensor {
+    padding: 3% 0;
+  }
+
+  .voltagetext {
+    font-size: 2.5vw;
+  }
+
+  .imagetext {
+    font-size: 3.5vw;
+  }
+
+  .display_box {
+    border: 2px solid;
+    margin: 3%;
+  }
+
+  .normal {
+    color: #30aa55;
+    border-color: rgba(48,170,85,.4);
+  }
+
+  .warning {
+    background-color: rgba(236,209,83,.1);
+    border-color: rgba(236,209,83,.6);
+    color: rgb(236,209,83);
   }
 }
 
-@media (max-width: 600px) {
+
+@media (max-width: 500px) {
   .wrapper {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: .5em;
+    margin: 0;
   }
-  .sensor {
-    width: 44px;
-    height: 64px;
-  }
+
   .temp_internal {
     font-size: 3vw;
   }
+
+  .name {
+    margin: auto;
+    font-size: 3vw;
+    line-height: 2px;
+  }
+
+  .sensor {
+    padding: 5% 0;
+  }
+
+  .voltagetext {
+    font-size: 3.5vw;
+  }
+
+  .imagetext {
+    font-size: 5vw;
+  }
+
+  .display_box {
+    border: 2px solid;
+    margin: 3%;
+  }
+
+  .normal {
+    color: #30aa55;
+    border-color: rgba(48,170,85,.4);
+  }
+
+  .warning {
+    background-color: rgba(236,209,83,.1);
+    border-color: rgba(236,209,83,.6);
+    color: rgb(236,209,83);
+  }
+  
 }

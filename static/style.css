@@ -1,7 +1,7 @@
 * {box-sizing: border-box;}
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(11, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   grid-gap: 1.3vw;
   grid-auto-rows: 1fr;
   padding-left: 2em;
@@ -93,40 +93,35 @@
 }
 
 .sensor {
-  width: 33%;
-  margin: auto;
-  position: relative;
-  text-align: center;
+  width: 33.2%;
   font-family: helvetica;
   font-size: 10px;
   color: #30aa55;
   float: left;
-  padding-bottom: 10px;
+  position: relative;
+
 }
 
 .imagetext {
   position: absolute;
-  margin: auto;
-  top: 0;
-  left:0;
-  right:0;
-  bottom:0;
-  padding-top: 14px;
-  padding-left: 4px;
+  top: 50%;
+  left: 50%;
   font-size: 24px;
+  transform: translateX(-50%) translateY(-50%);
+  margin: 0;
+  text-align: center;
+  padding-left: 2%;
 }
 
 .voltagetext {
   position: absolute;
-    margin: auto;
-    top: 0;
-    left:0;
-    right:0;
-    bottom:0;
-    padding-top: 19px;
-    padding-left: 0px;
-    font-size: 16px;
-    line-height: 40px;
+  top: 50%;
+  left: 50%;
+  font-size: 16px;
+  transform: translateX(-50%) translateY(-50%);
+  margin: 0;
+  text-align: center;
+    
 }
 
 .normaltext {
@@ -233,7 +228,8 @@ span {
   }
 }
   
-@media (max-width: 12800px) {
+/* 8 columns */
+@media (max-width: 1280px) {
   .wrapper {
     grid-template-columns: repeat(8, 1fr);
     padding-left: .5em;
@@ -250,16 +246,12 @@ span {
 
   .name {
     margin: auto;
-    font-size: .9vw;
+    font-size: .85vw;
     line-height: 2px;
   }
 
-  .sensor {
-    padding: 3% 0;
-  }
-
   .voltagetext {
-    font-size: 1vw;
+    font-size: .9vw;
   }
 
   .imagetext {
@@ -283,6 +275,7 @@ span {
   }
 }
 
+/* 7 columms */
 @media (max-width: 1200px) {
 }
 
@@ -308,12 +301,8 @@ span {
     line-height: 2px;
   }
 
-  .sensor {
-    padding: 3% 0;
-  }
-
   .voltagetext {
-    font-size: 1.1vw;
+    font-size: 1vw;
   }
 
   .imagetext {
@@ -337,6 +326,7 @@ span {
   }
 }
 
+/* 6 columns */
 @media (max-width: 1125px) {
   .wrapper {
     grid-template-columns: repeat(6, 1fr);
@@ -358,12 +348,8 @@ span {
     line-height: 2px;
   }
 
-  .sensor {
-    padding: 3% 0;
-  }
-
   .voltagetext {
-    font-size: 1.3vw;
+    font-size: 1.2vw;
   }
 
   .imagetext {
@@ -387,6 +373,7 @@ span {
   }
 }
 
+/* 5 columns */
 @media (max-width: 1000px) {
   .wrapper {
     grid-template-columns: repeat(5, 1fr);
@@ -406,10 +393,6 @@ span {
     margin: auto;
     font-size: 1.4vw;
     line-height: 2px;
-  }
-
-  .sensor {
-    padding: 3% 0;
   }
 
   .voltagetext {
@@ -435,7 +418,9 @@ span {
     border-color: rgba(236,209,83,.6);
     color: rgb(236,209,83);
   }
+}
 
+/* 4 columns */
 @media (max-width: 800px) {
   .wrapper {
     grid-template-columns: repeat(4, 1fr);
@@ -457,12 +442,8 @@ span {
     line-height: 2px;
   }
 
-  .sensor {
-    padding: 3% 0;
-  }
-
   .voltagetext {
-    font-size: 2vw;
+    font-size: 1.8vw;
   }
 
   .imagetext {
@@ -484,7 +465,9 @@ span {
     border-color: rgba(236,209,83,.6);
     color: rgb(236,209,83);
   }
+}
 
+/* 3 columns */
 @media (max-width: 650px) {
   .wrapper {
     grid-template-columns: repeat(3, 1fr);
@@ -505,12 +488,8 @@ span {
     line-height: 2px;
   }
 
-  .sensor {
-    padding: 3% 0;
-  }
-
   .voltagetext {
-    font-size: 2.5vw;
+    font-size: 2.3vw;
   }
 
   .imagetext {
@@ -534,7 +513,7 @@ span {
   }
 }
 
-
+/* 2 columns */
 @media (max-width: 500px) {
   .wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -551,12 +530,8 @@ span {
 
   .name {
     margin: auto;
-    font-size: 3vw;
+    font-size: 3.3vw;
     line-height: 2px;
-  }
-
-  .sensor {
-    padding: 5% 0;
   }
 
   .voltagetext {

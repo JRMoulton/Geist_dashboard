@@ -1,6 +1,5 @@
 $(document).ready(run_update)
-setInterval(run_update, 60*1000)
-
+setInterval(run_update, 3*1000)
 function run_update() {
     $.getJSON( "/static/data.json?" + Math.random())
         .done(updateData)

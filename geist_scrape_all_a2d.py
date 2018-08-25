@@ -12,6 +12,7 @@ dashboard_data = []
 geist_list = []
 geist_list_count = 0
 
+#########################################################
 # Datetime variables to determine business hours
 weekday = datetime.today().weekday()
 current_hour = int((datetime.now().strftime('%H')))
@@ -19,6 +20,7 @@ business_hours = False
 holidays = ["09-03-18", "11-22-18", "12-25-18"]
 today = (datetime.now().strftime('%m-%d-%y'))
 
+#########################################################
 # Returns true if current day/time is during business hours.
 if weekday < 5:
     if 6 < current_hour < 18:
@@ -38,9 +40,18 @@ def assignSensor(sensor_mode, sensor_value, sensor_label):
 
     global door
     global door_state
-    global door_state_label
     global door_label
     global door_sensor
+
+    global door2
+    global door_state2
+    global door_label2
+    global door_sensor2
+
+    global door3
+    global door_state3
+    global door_label3
+    global door_sensor3
 
     global power_failure
     global power_failure_state
@@ -79,44 +90,73 @@ def assignSensor(sensor_mode, sensor_value, sensor_label):
     
             ########################
             # Determine alarm status
-            if generator == "0.00":
+            int(float(generator))
+            if int(float(generator)) == 0:
                 generator_state = "Alarm"
             else:
                 generator_state = "Normal"
         else:
-            door_sensor = True
-            door_label = sensor_label
-            door = sensor_value
-            if door == "0.00":
-                door_state = "Normal"
-            elif door == "1.00":
-                if business_hours == True:
-                    door_state = "Warning"
-                else: 
-                    door_state = "Alarm"
+            if door_sensor == True:
+                if door_sensor2 == True:
+                    if door_sensor3 == True:
+                        print("Dang there are four doors!")
+                    else:
+                        door_sensor3 = True
+                        door_label3 = sensor_label
+                        door3 = sensor_value
+                        print(door3)
+                        if int(float(door3)) == 0:
+                            door_state3 = "Normal"
+                        elif int(float(door3)) == 1:
+                            if business_hours == True:
+                                door_state3 = "Warning"
+                            else: 
+                                door_state3 = "Alarm"
+                else:
+                    door_sensor2 = True
+                    door_label2 = sensor_label
+                    door2 = sensor_value
+                    if int(float(door2)) == 0:
+                        door_state2 = "Normal"
+                    elif int(float(door2)) == 1:
+                        if business_hours == True:
+                            door_state2 = "Warning"
+                        else: 
+                            door_state2 = "Alarm"
+            else:    
+                door_sensor = True
+                door_label = sensor_label
+                door = sensor_value
+                if int(float(door)) == 0:
+                    door_state = "Normal"
+                elif int(float(door)) == 1:
+                    if business_hours == True:
+                        door_state = "Warning"
+                    else: 
+                        door_state = "Alarm"
     elif "smoke" in sensor_mode:
         smoke_sensor = True
         smoke_label = sensor_label
         smoke = sensor_value
-        if smoke == "0.00":
+        if int(float(smoke)) == 0:
             smoke_state = "Alarm"
-        elif smoke == "1.00":
+        elif int(float(smoke)) == 1:
             smoke_state = "Normal"
     elif "powerFailure" in sensor_mode:
         power_failure_sensor = True
         power_failure_label = sensor_label
         power_failure = sensor_value
-        if power_failure == "0.00":
+        if int(float(power_failure)) == 0:
             power_failure_state = "Alarm"
-        elif power_failure == "1.00":
+        elif int(float(power_failure)) == 1:
             power_failure_state = "Normal"
     elif "flood" in sensor_mode:
         flood_sensor = True
         flood_label = sensor_label
         flood = sensor_value
-        if flood == "0.00":
+        if int(float(flood)) == 0:
             flood_state = "Alarm"
-        elif flood == "1.00":
+        elif int(float(flood)) == 1:
             flood_state = "Normal"
     elif "ivsPosGnd" in sensor_mode:
         plant_voltage_sensor = True
@@ -225,6 +265,16 @@ for device in geist_list_ordered:
         door = ""
         door_state = ""
 
+        door_sensor2 = False
+        door_label2 = ""
+        door2 = ""
+        door_state2 = ""
+
+        door_sensor3 = False
+        door_label3 = ""
+        door3 = ""
+        door_state3 = ""
+
         smoke_sensor = False
         smoke_label = ""
         smoke = ""
@@ -308,6 +358,18 @@ for device in geist_list_ordered:
                     assignSensor(analog_3, analog_3_value, analog_3_label)
                     
 
+                elif "A2D Sensor" in inner_dict2.values():
+                    print("Extra A2D Sensor!")
+                    analog_0_a2d = inner_dict2["analog"]["0"]["mode"]
+                    analog_0_a2d_value = inner_dict2["analog"]["0"]["value"]
+                    analog_0_a2d_label = inner_dict2["analog"]["0"]["label"]
+                    print(analog_0_a2d)
+                    print(analog_0_a2d_label)
+                    print(analog_0_a2d_value)
+
+                    assignSensor(analog_0_a2d, analog_0_a2d_value, analog_0_a2d_label)
+
+
                 elif "remotetemp" in inner_dict2.values():
                     if "unavailable" in inner_dict2.values():
                         print("Unavailable Remote Temp!!!")
@@ -329,8 +391,8 @@ for device in geist_list_ordered:
                         elif remote_temp_float < 40:
                             remote_temp_state = "Low"
                         else:
-                            remote_temp_state = "Normal"  
-
+                            remote_temp_state = "Normal" 
+                #########################################################
                 # Checks for overall criticality based on highest criticality of any one sensor.
                 sensor_states = [temp_internal_state, temp_internal_state, door_state, smoke_state, power_failure_state, flood_state, remote_temp_state, plant_voltage_state, generator_state, hydrogen_state]    
                 geist_criticality = "Normal"
@@ -365,6 +427,18 @@ for device in geist_list_ordered:
                                         "label": door_label,
                                         "value": door,
                                         "state": door_state
+                                        },
+                               "door2": {
+                                        "sensor": door_sensor2,
+                                        "label": door_label2,
+                                        "value": door2,
+                                        "state": door_state2
+                                        },
+                               "door3": {
+                                        "sensor": door_sensor3,
+                                        "label": door_label3,
+                                        "value": door3,
+                                        "state": door_state3
                                         },
                                 "smoke": {
                                         "sensor": smoke_sensor,

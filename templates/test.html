@@ -18,14 +18,14 @@
                                 <h1 class="color_normal" id={{device_dict.device.name + "_temp_in"}}>{{device_dict.temp_internal.value}}</h1>
                             {% elif device_dict.temp_internal.state == "Warning" -%}
                                 <h1 class="color_warning" id={{device_dict.device.name + "_temp_in"}}>{{device_dict.temp_internal.value}}</h1>
-                            {% elif device_dict.temp_internal.state == "Critical" -%}
+                            {% elif device_dict.temp_internal.state == "Low" -%}
                                 <h1 class="color_low" id={{device_dict.device.name + "_temp_in"}}>{{device_dict.temp_internal.value}}</h1>
                             {% else -%}   
                                 <h1 class="color_critical" id={{device_dict.device.name + "_temp_in"}}>{{device_dict.temp_internal.value}}</h1>
                             {% endif -%}
                         </div>
                         <div class ="name">
-                            <p>{{device_dict.device.name}}</p>
+                            <p>{{device_dict.device.alt_name}}</p>
                         </div>
                         {% if device_dict.door.sensor == True -%}
                             <div class = "sensor door tooltip">
@@ -35,6 +35,28 @@
                                 {% else -%}   
                                     <img width="100%" height="100%" src="/static/img/door_critical.png">
                                     <span class = "tooltiptext" id={{device_dict.device.name + "_door_tooltip"}}>{{ device_dict.door.label }} is Open</span>
+                                {% endif -%}
+                            </div>
+                        {% endif -%}
+                        {% if device_dict.door2.sensor == True -%}
+                            <div class = "sensor door tooltip">
+                                {% if device_dict.door2.state == "Normal" -%}
+                                    <img width="100%" height="100%" src="/static/img/door_normal.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_door2_tooltip"}}>{{ device_dict.door.label }} is Closed</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/door_critical.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_door2_tooltip"}}>{{ device_dict.door.label }} is Open</span>
+                                {% endif -%}
+                            </div>
+                        {% endif -%}
+                        {% if device_dict.door3.sensor == True -%}
+                            <div class = "sensor door tooltip">
+                                {% if device_dict.door3.state == "Normal" -%}
+                                    <img width="100%" height="100%" src="/static/img/door_normal.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_door3_tooltip"}}>{{ device_dict.door.label }} is Closed</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/door_critical.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_door3_tooltip"}}>{{ device_dict.door.label }} is Open</span>
                                 {% endif -%}
                             </div>
                         {% endif -%}

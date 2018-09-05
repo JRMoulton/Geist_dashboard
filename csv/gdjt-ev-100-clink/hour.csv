@@ -1,0 +1,4 @@
+timestamp,temp_internal_high,temp_internal_low,door_high,door_low,door2_high,door2_low,door3_high,door3_low,smoke_high,smoke_low,power_failure_high,power_failure_low,flood_high,flood_low,flood2_high,flood2_low,remote_temp_high,remote_temp_low,generator_high,generator_low,hydrogen_high,hydrogen_low
+2018-09-04 18:00,71.2,70.3,,,,,,,,,,,,,,,,,,,,
+2018-09-04 19:00,71.1,70.1,,,,,,,,,,,,,,,,,,,,
+2018-09-04 20:00,71.1,69.7,,,,,,,,,,,,,,,,,,,,

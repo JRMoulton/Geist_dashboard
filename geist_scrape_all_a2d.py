@@ -63,6 +63,11 @@ def assignSensor(sensor_mode, sensor_value, sensor_label):
     global flood_label
     global flood_sensor
 
+    global flood2
+    global flood2_state
+    global flood2_label
+    global flood2_sensor
+
     global plant_voltage
     global plant_voltage_state
     global plant_voltage_label
@@ -151,13 +156,22 @@ def assignSensor(sensor_mode, sensor_value, sensor_label):
         elif int(float(power_failure)) == 1:
             power_failure_state = "Normal"
     elif "flood" in sensor_mode:
-        flood_sensor = True
-        flood_label = sensor_label
-        flood = sensor_value
-        if int(float(flood)) == 0:
-            flood_state = "Alarm"
-        elif int(float(flood)) == 1:
-            flood_state = "Normal"
+        if flood_sensor == True:
+            flood2_sensor = True
+            flood2_label = sensor_label
+            flood2 = sensor_value
+            if int(float(flood2)) == 0:
+                flood_state = "Alarm"
+            elif int(float(flood2)) == 1:
+                flood2_state = "Normal"
+        else:
+            flood_sensor = True
+            flood_label = sensor_label
+            flood = sensor_value
+            if int(float(flood)) == 0:
+                flood_state = "Alarm"
+            elif int(float(flood)) == 1:
+                flood_state = "Normal"
     elif "ivsPosGnd" in sensor_mode:
         plant_voltage_sensor = True
         plant_voltage_label = sensor_label
@@ -188,9 +202,9 @@ def assignSensor(sensor_mode, sensor_value, sensor_label):
     
             ########################
             # Determine alarm status
-            if 2 <= hydrogen < 3:
+            if 5 <= hydrogen < 6:
                 hydrogen_state = "Warning"
-            elif hydrogen >= 3:
+            elif hydrogen >= 6:
                 hydrogen_state = "Alarm"
             else:
                 hydrogen_state = "Normal"
@@ -289,6 +303,11 @@ for device in geist_list_ordered:
         flood_label = ""
         flood = ""
         flood_state = ""
+        
+        flood2_sensor = False
+        flood2_label = ""
+        flood2 = ""
+        flood2_state = ""
 
         plant_voltage_sensor = False
         plant_voltage_label = ""
@@ -457,6 +476,12 @@ for device in geist_list_ordered:
                                         "label": flood_label,
                                         "value": flood,
                                         "state": flood_state
+                                        },
+                               "flood2": {
+                                        "sensor": flood2_sensor,
+                                        "label": flood2_label,
+                                        "value": flood2,
+                                        "state": flood2_state
                                         },
                         "remote_temp": {
                                         "sensor": remote_temp_sensor,

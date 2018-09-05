@@ -1,569 +1,165 @@
 {% extends "layout.html" %}
 {% block content %}
+
     <div class="wrapper">
-            <div class="display_box normal">
-                <div class ="temperature">
-                    <h1>64.9 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>vrnl-ev-100-jensen</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-            </div>
-            <div class="display_box normal">
-                <div class ="temperature">
-                    <h1>71.1 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>neol-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-            </div>
-            <div class="display_box normal">
-                <div class ="temperature">
-                    <h1>73.8 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>neol-ev-100-2</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/flood_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/generator_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/hydrogen_normal.png">
-                </div>
-            </div>
-            <div class="display_box warning">
-                <div class ="color_normal temperature">
-                    <h1>69.9 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>vrnl-ev-100-lower-asphalt</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/generator_warning.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class="temperature">
-                    <h1>68.8 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>frld-ev-100-strawberry</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext">-55v</h1>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>69.5 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>frld-ev-100-2</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/generator_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/hydrogen_normal.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>64.6 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>vrnl-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/flood_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/remote_temp_normal.png">
-                    <h1 class = "imagetext" >57°</h1>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>72.7 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>almt-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/flood_normal.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>68.1 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>almt-ev-100-2</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/generator_normal.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>70.1 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>dchs-ev-100-2</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/generator_normal.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>73.6 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>ftbt-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>61.0 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>rsvt-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/remote_temp_normal.png">
-                    <h1 class = "imagetext" >45°</h1>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/hydrogen_normal.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>72.6 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>rsvt-ev-100-2</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/remote_temp_normal.png">
-                    <h1 class = "imagetext" >83°</h1>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-            </div>
-            <div class="warning display_box">
-                <div class ="temperature color_normal">
-                    <h1>76.8 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>rsvt-ev-100-3</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/flood_normal.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>65.7 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>rsvt-ev-100-ft-duchesne</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>65.9 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>hbcy-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>70.2 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>rngl-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>69.7 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>mekr-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/flood_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>69.6 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>dbeq-ev-100-1</p>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>65.3 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>rifl-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>72.2 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>gdjt-ev-100-clink</p>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>67.2 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>gdjt-ev-100-merril-lynch</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>65.9 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>rndt-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>71.9 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>vrnl-ev-100-3</p>
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>68.4 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>vrnl-ev-100-headend</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/generator_normal.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>75.4 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>tabn-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/generator_normal.png">
-                </div>
-            </div>
-            <div class="critical display_box">
-                <div class ="temperature">
-                    <h1>72.1 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>tabn-ev-100-2</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/flood_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/hydrogen_critical.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>67.2 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>dchs-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/flood_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/hydrogen_normal.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>70.2 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>frld-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/commercial_power_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/flood_normal.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature" "normal_color">
-                    <h1>69.9 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>lapn-ev-100-1</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/plant_voltage_normal.png">
-                    <h1 class = "voltagetext" >-54v</h1>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/generator_normal.png">
-                </div>
-            </div>
-            <div class="normal display_box">
-                <div class ="temperature">
-                    <h1>71.6 °F</h1>
-                </div>
-                <div class ="name">
-                    <p>lapn-ev-100-2</p>
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/door_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/smoke_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/flood_normal.png">
-                </div>
-                <div class = "sensor">
-                    <img width="54" height="54" src="/static/img/hydrogen_normal.png">
-                </div>
-            </div>
-        </div>
-        
-{% endblock content %}
+        {% for device_dict in geist_data -%}
+            {% if device_dict.device.geist_criticality == "Normal"%}
+                <div class="display_box normal" id={{device_dict.device.name}}>
+            {% elif device_dict.device.geist_criticality == "Low"%}
+                <div class="display_box low" id={{device_dict.device.name}}>
+            {% elif device_dict.device.geist_criticality == "Warning"%}
+                <div class="display_box warning" id={{device_dict.device.name}}>
+            {% else %}
+                <div class="display_box critical" id={{device_dict.device.name}}>
+            {%endif%}
+                    <a target="_blank" href= {{ device_dict.device.device_link }}>
+                        <div class ="temp_internal">
+                            {% if device_dict.temp_internal.state == "Normal" -%}
+                                <h1 class="color_normal" id={{device_dict.device.name + "_temp_in"}}>{{device_dict.temp_internal.value}}</h1>
+                            {% elif device_dict.temp_internal.state == "Warning" -%}
+                                <h1 class="color_warning" id={{device_dict.device.name + "_temp_in"}}>{{device_dict.temp_internal.value}}</h1>
+                            {% elif device_dict.temp_internal.state == "Low" -%}
+                                <h1 class="color_low" id={{device_dict.device.name + "_temp_in"}}>{{device_dict.temp_internal.value}}</h1>
+                            {% else -%}   
+                                <h1 class="color_critical" id={{device_dict.device.name + "_temp_in"}}>{{device_dict.temp_internal.value}}</h1>
+                            {% endif -%}
+                        </div>
+                        <div class ="name">
+                            <p>{{device_dict.device.alt_name}}</p>
+                        </div>
+                        {% if device_dict.door.sensor == True -%}
+                            <div class = "sensor door tooltip">
+                                {% if device_dict.door.state == "Normal" -%}
+                                    <img width="100%" height="100%" src="/static/img/door_normal.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_door_tooltip"}}>{{ device_dict.door.label }} is Closed</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/door_critical.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_door_tooltip"}}>{{ device_dict.door.label }} is Open</span>
+                                {% endif -%}
+                            </div>
+                        {% endif -%}
+                        {% if device_dict.door2.sensor == True -%}
+                            <div class = "sensor door tooltip">
+                                {% if device_dict.door2.state == "Normal" -%}
+                                    <img width="100%" height="100%" src="/static/img/door_normal.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_door2_tooltip"}}>{{ device_dict.door.label }} is Closed</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/door_critical.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_door2_tooltip"}}>{{ device_dict.door.label }} is Open</span>
+                                {% endif -%}
+                            </div>
+                        {% endif -%}
+                        {% if device_dict.door3.sensor == True -%}
+                            <div class = "sensor door tooltip">
+                                {% if device_dict.door3.state == "Normal" -%}
+                                    <img width="100%" height="100%" src="/static/img/door_normal.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_door3_tooltip"}}>{{ device_dict.door.label }} is Closed</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/door_critical.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_door3_tooltip"}}>{{ device_dict.door.label }} is Open</span>
+                                {% endif -%}
+                            </div>
+                        {% endif -%}
+                        {% if device_dict.smoke.sensor == True -%}
+                            <div class = "sensor smoke tooltip">
+                                {% if device_dict.smoke.state == "Normal" -%}
+                                    <img width="100%" height="100%" src="/static/img/smoke_normal.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_smoke_tooltip"}}>{{ device_dict.smoke.label }} State is Normal</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/smoke_critical.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_smoke_tooltip"}}{{ device_dict.smoke.label }} is in Alarm!</span>
+                                {% endif -%}
+                            </div>
+                        {% endif -%}
+                        {% if device_dict.power_failure.sensor == True -%}
+                            <div class = "sensor commercial_power tooltip">
+                                {% if device_dict.power_failure.state == "Normal" -%}
+                                    <img width="100%" height="100%" src="/static/img/commercial_power_normal.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_power_tooltip"}}>{{ device_dict.power_failure.label }} is Normal</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/commercial_power_critical.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_power_tooltip"}}>{{ device_dict.power_failure.label }} Failure!</span>
+                                {% endif -%}
+                            </div>
+                        {% endif -%}
+                        {% if device_dict.flood.sensor == True -%}
+                            <div class = "sensor flood tooltip">
+                                {% if device_dict.flood.state == "Normal" -%}
+                                    <img width="100%" height="100%" src="/static/img/flood_normal.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_flood_tooltip"}}>{{ device_dict.flood.label }} is Dry</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/flood_critical.png">
+                                {% endif -%}
+                            </div>
+                        {% endif -%}
+                        {% if device_dict.remote_temp.sensor == True -%}
+                            <div class = "sensor remote_temp tooltip">
+                                {% if device_dict.remote_temp.state == "Normal" -%}
+                                    <img width="100%" height="100%" src="/static/img/remote_temp_normal.png">
+                                    <h1 class="imagetext color_normal" id={{device_dict.device.name + "_rem_temp"}}>{{device_dict.remote_temp.value}}</h1>
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_rem_temp_tooltip"}}>{{ device_dict.remote_temp.label }}</span>
+                                {% elif device_dict.remote_temp.state == "Warning" -%}
+                                    <img width="100%" height="100%" src="/static/img/remote_temp_warning.png">
+                                    <h1 class="imagetext color_warning" id={{device_dict.device.name + "_rem_temp"}}>{{device_dict.remote_temp.value}}</h1>
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_rem_temp_tooltip"}}>{{ device_dict.remote_temp.label }}</span>
+                                {% elif device_dict.remote_temp.state == "Low" -%}
+                                    <img width="100%" height="100%" src="/static/img/remote_temp_low.png">
+                                    <h1 class="imagetext color_low" id={{device_dict.device.name + "_rem_temp"}}>{{device_dict.remote_temp.value}}</h1>
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_rem_temp_tooltip"}}>{{ device_dict.remote_temp.label }}</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/remote_temp_critical.png">
+                                    <h1 class="imagetext color_critical" id={{device_dict.device.name + "_rem_temp"}}>{{device_dict.remote_temp.value}}</h1>
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_rem_temp_tooltip"}}>{{ device_dict.remote_temp.label }}</span>
+                                {% endif -%}
+                            </div>
+                        {% endif -%}
+                        {% if device_dict.plant_voltage.sensor == True -%}
+                            <div class = "sensor plant_voltage tooltip">
+                                {% if device_dict.plant_voltage.state == "Normal" -%}
+                                    <img width="100%" height="100%" src="/static/img/plant_voltage_normal.png">
+                                    <h1 class = "voltagetext color_normal" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_volt_tooltip"}}>{{ device_dict.plant_voltage.label }} is normal at {{ device_dict.plant_voltage.value }}V</span>
+                                {% elif device_dict.power_failure.state == "Warning" -%}
+                                    <img width="100%" height="100%" src="/static/img/commercial_power_warning.png">
+                                    <h1 class = "voltagetext color_warning" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_volt_tooltip"}}>{{ device_dict.plant_voltage.label }} is getting low at {{ device_dict.plant_voltage.value }}V</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/plant_voltage_critical.png">
+                                    <h1 class = "voltagetext color_warning" id={{device_dict.device.name + "_volt"}}>{{device_dict.plant_voltage.value}}</h1>
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_volt_tooltip"}}>{{ device_dict.plant_voltage.label }} is critically low at {{ device_dict.plant_voltage.value }}V</span>
+                                {% endif -%}
+                            </div>
+                        {%endif -%}
+                        {% if device_dict.generator.sensor == True -%}
+                            <div class = "sensor generator tooltip">
+                                {% if device_dict.generator.state == "Normal" -%}
+                                    <img width="100%" height="100%" src="/static/img/generator_normal.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_gen_tooltip"}}>Generator State is Normal</span>
+                                {% elif device_dict.power_failure.state == "Warning" -%}
+                                    <img width="100%" height="100%" src="/static/img/generator_warning.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_gen_tooltip"}}>Generator is Exercising</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/generator_critical.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_gen_tooltip"}}>Generator is running with a load of {{ device_dict.generator.value }} Amps</span>
+                                {% endif -%}
+                            </div>
+                        {% endif -%}
+                        {% if device_dict.hydrogen.sensor == True -%}
+                            <div class = "sensor hydrogen tooltip">
+                                {% if device_dict.hydrogen.state == "Normal"-%}
+                                    <img width="100%" height="100%" src="/static/img/hydrogen_normal.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_hydro_tooltip"}}>Hydrogen level is normal at {{ device_dict.hydrogen.value }}% LEL</span>
+                                {% elif device_dict.hydrogen.state == "Warning"-%}
+                                    <img width="100%" height="100%" src="/static/img/hydrogen_warning.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_hydro_tooltip"}}>Hydrogen level is a bit high at {{ device_dict.hydrogen.value }}% LEL</span>
+                                {% else -%}   
+                                    <img width="100%" height="100%" src="/static/img/hydrogen_critical.png">
+                                    <span class = "tooltiptext" id={{device_dict.device.name + "_hydro_tooltip"}}>Hydrogen level is critically high at {{ device_dict.hydrogen.value }}% LEL</span>
+                                {% endif -%}
+                            </div>
+                       {% endif -%}
+                    </a>
+                </div>
+        {% endfor -%}
+    </div>
+{% endblock content -%}

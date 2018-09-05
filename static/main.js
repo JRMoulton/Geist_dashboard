@@ -112,14 +112,27 @@ function updateData(data) {
     
         if (data[device].flood.sensor == true) {
             if (data[device].flood.state == "Normal") {
-                document.getElementById(data[device].device.name + "_flood_tooltip").innerHTML = "Flood Sensor is Dry";
+                document.getElementById(data[device].device.name + "_flood_tooltip").innerHTML = (data[device].flood.label) + " is Dry";
                 id.children(".flood").children().attr("src", "/static/img/flood_normal.png");
             } else if (data[device].flood.state == "Warning") {
-                document.getElementById(data[device].device.name + "_flood_tooltip").innerHTML = "Flood Sensor State - Warning";
+                document.getElementById(data[device].device.name + "_flood_tooltip").innerHTML = (data[device].flood.label) + " is in Warning State";
                 id.children(".flood").children().attr("src", "/static/img/flood_warning.png");
             } else {
-                document.getElementById(data[device].device.name + "_flood_tooltip").innerHTML = "Flood Sensor is Wet";
+                document.getElementById(data[device].device.name + "_flood_tooltip").innerHTML = (data[device].flood.label) + " is Wet";
+                id.children(".flood").children().attr("src", "/static/img/flood_critical.png");
+           };
+        };
+
+        if (data[device].flood2.sensor == true) {
+            if (data[device].flood2.state == "Normal") {
+                document.getElementById(data[device].device.name + "_flood2_tooltip").innerHTML = (data[device].flood2.label) + " is Dry";
+                id.children(".flood").children().attr("src", "/static/img/flood_normal.png");
+            } else if (data[device].flood2.state == "Warning") {
+                document.getElementById(data[device].device.name + "_flood2_tooltip").innerHTML =  (data[device].flood2.label) + " is in Warning State";
                 id.children(".flood").children().attr("src", "/static/img/flood_warning.png");
+            } else {
+                document.getElementById(data[device].device.name + "_flood2_tooltip").innerHTML = (data[device].flood2.label) + " is Wet";
+                id.children(".flood").children().attr("src", "/static/img/flood_critical.png");
            };
         };
 
